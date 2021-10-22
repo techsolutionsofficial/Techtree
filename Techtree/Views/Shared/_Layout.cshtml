@@ -13,8 +13,32 @@
     <!-- Animate CSS -->
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+    <!-- AOS CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <!-- Owl Carousel -->
     <link rel="stylesheet" type="text/css" href="~/css/site.css" />
     <link rel="stylesheet" type="text/css" href="~/css/style.css" />
+
+    <environment include="Development">
+        <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <link href="~/css/Site.css" rel="stylesheet" />
+        <link href="~/css/NewStyle.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        @*<link href="~/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />*@
+
+        <link rel="stylesheet"
+              href="http://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/twitter-bootstrap/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only"
+              asp-fallback-test-property="position"
+              asp-fallback-test-value="absolute"
+              integrity=""
+              crossorigin="anonymous">
+
+        <link href="~/css/site.min.css" rel="stylesheet" />
+    </environment>
+
 </head>
 
 <body>
