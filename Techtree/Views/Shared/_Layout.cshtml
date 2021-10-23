@@ -17,6 +17,24 @@
     <!-- Owl Carousel -->
     <link rel="stylesheet" type="text/css" href="~/css/site.css" />
     <link rel="stylesheet" type="text/css" href="~/css/style.css" />
+
+    <environment include="Development">
+        <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <link href="~/css/Site.css" rel="stylesheet" />
+        <link href="~/css/NewStyle.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        @*
+            <link href="~/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />*@
+
+        <link rel="stylesheet" href="http://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/twitter-bootstrap/css/bootstrap.min.css" asp-fallback-test-class="sr-only"
+              asp-fallback-test-property="position" asp-fallback-test-value="absolute" integrity=""
+              crossorigin="anonymous">
+
+        <link href="~/css/site.min.css" rel="stylesheet" />
+    </environment>
+
 </head>
 
 <body>
@@ -25,7 +43,7 @@
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Techtree</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
@@ -49,7 +67,7 @@
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2021 - Tech Solutions | Muhammad Mubashir - <a asp-area="" asp-controller="Home"
-                asp-action="Privacy">Privacy</a>
+                                                                  asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

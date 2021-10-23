@@ -34,7 +34,8 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ThumbnailImage)
+                @*@Html.DisplayFor(modelItem => item.ThumbnailImage)*@
+                <img src="@item.ThumbnailImage" class="img-fluid" alt="" />
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
