@@ -8,7 +8,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Title -->
     <title>@ViewData["Title"] - Tech Solutions | Muhammad Mubashir</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.11.3/b-2.0.1/date-1.1.1/r-2.2.9/datatables.min.css" />
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.11.3/b-2.0.1/date-1.1.1/r-2.2.9/datatables.min.js"></script>
+
+
     <!-- Development Environment -->
+
+
     <environment include="Development">
         <link rel="stylesheet" type="text/css" href="~/lib/bootstrap/css/bootstrap.css" />
         <link rel="stylesheet" type="text/css" href="~/lib/bootstrap/css/bootstrap.css" />
@@ -18,9 +26,9 @@
     <!-- Production Environment -->
     <environment exclude="Development">
         <link rel="stylesheet" href="http://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css"
-            asp-fallback-href="~/lib/bootstrap/css/bootstrap.min.css" asp-fallback-test-class="sr-only"
-            asp-fallback-test-property="position" asp-fallback-test-value="absolute" integrity=""
-            crossorigin="anonymous">
+              asp-fallback-href="~/lib/bootstrap/css/bootstrap.min.css" asp-fallback-test-class="sr-only"
+              asp-fallback-test-property="position" asp-fallback-test-value="absolute" integrity=""
+              crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="~/css/site.css" />
         <link rel="stylesheet" type="text/css" href="~/css/style.css" />
     </environment>
@@ -35,7 +43,7 @@
                     <span>Tech</span>Solutions
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
@@ -59,7 +67,7 @@
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2021 - Tech Solutions | Muhammad Mubashir - <a asp-area="" asp-controller="Home"
-                asp-action="Privacy">Privacy</a>
+                                                                  asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
