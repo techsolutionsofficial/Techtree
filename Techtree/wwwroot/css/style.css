@@ -1,4 +1,8 @@
 ﻿
+.navbar-brand span {
+    color: #28a745;
+}
+
 /* ============ only desktop view ============ */
 @media all and (min-width: 992px) {
     .navbar .nav-item .dropdown-menu {

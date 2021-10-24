@@ -4,13 +4,13 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>Edit Category Item</h1>
 
-<h4>CategoryItem</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
+            <input type="hidden" asp-for="CategoryId" />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
@@ -24,14 +24,10 @@
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CategoryId" class="control-label"></label>
-                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
-                <span asp-validation-for="CategoryId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MediaTypeId" class="control-label"></label>
-                <select asp-for="MediaTypeId" class="form-control" asp-items="ViewBag.MediaTypeId"></select>
-                <span asp-validation-for="MediaTypeId" class="text-danger"></span>
+                <label asp-for="MediaTypeId" class="font-weight-bold"></label>
+                <select asp-for="MediaTypeId" class="form-control" asp-items="@Model.MediaTypes">
+                    <option value=""> ---- Please Select A Mediatype ----</option>
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="DateTimeItemReleased" class="control-label"></label>
@@ -46,7 +42,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" asp-route-categoryId="@Model.CategoryId">Back to List</a>
 </div>
 
 @section Scripts {
