@@ -12,14 +12,17 @@ namespace Techtree.Entities
         [Key]
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please Enter Title!!!")]
         [StringLength(200, MinimumLength = 2)]
         public string Title { get; set; }
 
+        [Display(Name = "HTML Content")]
         public string HtmlContent { get; set; }
 
+        [Display(Name = "Video Link")]
         public string VideoLink { get; set; }
 
+        [Display(Name = "Category Item")]
         public CategoryItem CategoryItem { get; set; }
 
         [NotMapped]

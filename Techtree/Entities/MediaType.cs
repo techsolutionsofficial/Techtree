@@ -17,7 +17,8 @@ namespace Techtree.Entities
         [StringLength(200, MinimumLength = 2)]
         public string Title { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please Add Thumbnail Image!!!")]
+        [Display(Name = "Thumbnail Image")]
         public string ThumbnailImage { get; set; }
 
         [ForeignKey("MediaTypeId")]
