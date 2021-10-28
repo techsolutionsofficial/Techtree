@@ -30,10 +30,16 @@
                 </select>
             </div>
             <div class="form-group">
+                <label asp-for="DateTimeItemReleased" class="font-weight-bold"></label>
+                <input id="DateTimeItemReleased" name="DateTimeItemReleased"
+                       class="form-control datepicker" value="@Model.DateTimeItemReleased.ToString("dd-MM-yyyy")" />
+                <span asp-validation-for="DateTimeItemReleased" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
                 <label asp-for="DateTimeItemReleased" class="control-label"></label>
                 <input asp-for="DateTimeItemReleased" class="form-control" />
                 <span asp-validation-for="DateTimeItemReleased" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>

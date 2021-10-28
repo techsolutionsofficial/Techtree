@@ -10,10 +10,12 @@ namespace Techtree.Entities
 {
     public class CategoryItem
     {
+        private DateTime _releaseDate = DateTime.MinValue;
+
         [Key]
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please Enter Title!!!")]
         [StringLength(200, MinimumLength = 2)]
         public string Title { get; set; }
 
@@ -21,13 +23,27 @@ namespace Techtree.Entities
 
         public int CategoryId { get; set; }
 
+        [Display(Name = "Media Type")]
+        [Required(ErrorMessage = "Please select a valid item from the '{0}' dropdown list")]
         public int MediaTypeId { get; set; }
 
         [NotMapped]
         public virtual ICollection<SelectListItem> MediaTypes { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime DateTimeItemReleased { get; set; }
+        // [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}")]
+        [Display(Name = "Release Date")]
+        public DateTime DateTimeItemReleased
+        {
+            get
+            {
+                return (_releaseDate == DateTime.MinValue) ? DateTime.Now : _releaseDate;
+            }
+            set
+            {
+                _releaseDate = value;
+            }
+        }
 
         [NotMapped]
         public int ContentId { get; set; }

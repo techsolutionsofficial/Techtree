@@ -1,7 +1,29 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
-$(document).ready(function () {
+﻿
+$(function () {
     $('.myTable').DataTable();
+
+    function AddSubtractMonths(date, numMonths) {
+        var month = date.getMonth();
+
+        var milliSeconds = new Date(date).setMonth(month + numMonths);
+
+        return new Date(milliSeconds);
+    };
+
+    function WireUpDatePicker() {
+
+        const addMonths = 2;
+        var currDate = new Date();
+
+        $('.datepicker').datepicker(
+            {
+                dateFormat: 'dd-mm-yy',
+                minDate: currDate,
+                maxDate: AddSubtractMonths(currDate, addMonths)
+            }
+        );
+    }
+
+    WireUpDatePicker();
+
 });

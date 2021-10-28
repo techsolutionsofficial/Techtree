@@ -27,10 +27,12 @@
                 <select asp-for="MediaTypeId" class="form-control" asp-items="@Model.MediaTypes">
                     <option value=""> ---- Please Select A Mediatype ----</option>
                 </select>
+                <span asp-validation-for="MediaTypeId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DateTimeItemReleased" class="font-weight-bold"></label>
-                <input asp-for="DateTimeItemReleased" class="form-control" />
+                <input id="DateTimeItemReleased" name="DateTimeItemReleased"
+                       class="form-control datepicker" value="@Model.DateTimeItemReleased.ToString("dd-MM-yyyy")" />
                 <span asp-validation-for="DateTimeItemReleased" class="text-danger"></span>
             </div>
             <div class="form-group">

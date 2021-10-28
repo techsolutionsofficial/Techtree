@@ -13,7 +13,7 @@ namespace Techtree.Entities
         [Key]
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please Enter Title!!!")]
         [StringLength(200, MinimumLength = 2)]
         public string Title { get; set; }
 
