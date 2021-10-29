@@ -1,10 +1,21 @@
-﻿<!-- Admin Menu Dropdown -->
-<li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle text-dark" href="#" data-toggle="dropdown"> Admin </a>
-    <ul class="dropdown-menu fade-up">
-        <li><a class="dropdown-item" asp-area="Admin" asp-controller="Category" asp-action="Index">Categories</a></li>
-        <li><a class="dropdown-item" asp-area="Admin" asp-controller="CategoryItem" asp-action="Index"> Users To Categories </a></li>
-        <div class="dropdown-divider"></div>
-        <li><a class="dropdown-item" asp-area="Admin" asp-controller="MediaType" asp-action="Index"> Media Types </a></li>
-    </ul>
-</li>
+﻿@using Microsoft.AspNetCore.Identity
+@using Techtree.Data
+
+
+@inject SignInManager<ApplicationUser> _signInManager
+@inject UserManager<ApplicationUser> _userManager
+
+@if (_signInManager.IsSignedIn(User) && await _userManager.IsInRoleAsync(_userManager.GetUserAsync(User).Result,
+"admin"))
+{
+    <!-- Admin Menu Dropdown -->
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-dark" href="#" data-toggle="dropdown"> Admin </a>
+        <ul class="dropdown-menu fade-up">
+            <li><a class="dropdown-item" asp-area="Admin" asp-controller="Category" asp-action="Index">Categories</a></li>
+            <li><a class="dropdown-item" asp-area="Admin" asp-controller="CategoryItem" asp-action="Index"> Users To Categories </a></li>
+            <div class="dropdown-divider"></div>
+            <li><a class="dropdown-item" asp-area="Admin" asp-controller="MediaType" asp-action="Index"> Media Types </a></li>
+        </ul>
+    </li>
+}
