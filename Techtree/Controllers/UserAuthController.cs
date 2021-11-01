@@ -118,17 +118,17 @@ namespace Techtree.Controllers
 
         }
 
-        [AllowAnonymous]
-        public async Task<bool> UserNameExists(string userName)
-        {
-            bool userNameExists = await _context.Users.AnyAsync(u => u.UserName.ToUpper() == userName.ToUpper());
+        //[AllowAnonymous]
+        //public async Task<bool> UserNameExists(string userName)
+        //{
+        //    bool userNameExists = await _context.Users.AnyAsync(u => u.UserName.ToUpper() == userName.ToUpper());
 
-            if (userNameExists)
-                return true;
+        //    if (userNameExists)
+        //        return true;
 
-            return false;
+        //    return false;
 
-        }
+        //}
 
         private void AddErrorsToModelState(IdentityResult result)
         {

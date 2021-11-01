@@ -1,5 +1,4 @@
 ﻿$(function () {
-    //? User Registration Model
 
     $("#UserRegistrationModal").on('hidden.bs.modal', function (e) {
         $("#UserRegistrationModal input[name='CategoryId']").val('0');
@@ -59,14 +58,14 @@
     });
 
 
-    var registerUserButton = $("#UserRegistrationModal button[name = 'register']")
-        .click(onUserRegisterClick);
+    var registerUserButton = $("#UserRegistrationModal button[name = 'register']").click(onUserRegisterClick);
+
+
 
     function onUserRegisterClick() {
         var url = "UserAuth/RegisterUser";
 
-        var antiForgeryToken = $("#UserRegistrationModal input[name='__RequestVerificationToken']")
-            .val();
+        var antiForgeryToken = $("#UserRegistrationModal input[name='__RequestVerificationToken']").val();
         var email = $("#UserRegistrationModal input[name='Email']").val();
         var password = $("#UserRegistrationModal input[name='Password']").val();
         var confirmPassword = $("#UserRegistrationModal input[name='ConfirmPassword']").val();
@@ -129,4 +128,5 @@
         });
 
     }
+
 });
